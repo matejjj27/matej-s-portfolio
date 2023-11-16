@@ -1,5 +1,5 @@
 import React from "react";
-import TopNavigation from "../components/molecules/TopNavigation";
+import TopNavigation from "../components/TopNavigation";
 
 const withTopNavigation = <P extends object>(
   WrappedComponent: React.ComponentType<P>

@@ -14,16 +14,8 @@ export const NavButton = ({
   color
 }: NavButtonProps) => {
   return (
-    <h1
-      className={`cursor-pointer text-8xl mb-8 ${color}`}
-      onClick={onClick}
-      style={{ fontSize: "94px", zoom: "1" }}
-    >
-      <span
-        className="hoverable-text"
-        onMouseOver={onMouseOver}
-        onMouseLeave={onMouseLeave}
-      >
+    <h1 className={`nav-button ${color}`} onClick={onClick}>
+      <span onMouseOver={onMouseOver} onMouseLeave={onMouseLeave}>
         {text}
       </span>
     </h1>

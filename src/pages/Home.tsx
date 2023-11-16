@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { NavButton } from "../components/atoms/NavButton";
+import { NavButton } from "../components/NavButton";
 
 const Home = () => {
   const [buttonValues, setButtonValues] = useState({

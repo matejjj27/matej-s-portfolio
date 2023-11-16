@@ -5,12 +5,10 @@ const Contact = () => {
   const [buttonText, setButtonText] = useState("matej4o9@gmail.com");
 
   return (
-    <div className="p-10 text-center">
-      <h1 className="text-start m-12 mb-8 text-8xl max-w-5xl mx-auto">
-        Let's make something great together!
-      </h1>
-      <div className="flex flex-col gap-4 text-start max-w-xl mx-auto mb-20">
-        <h1 className="text-start mt-20 mb-3 text-4xl">Contact</h1>
+    <div className="page-wrapper">
+      <h1 className="main-title">Let's make something great together!</h1>
+      <div className="content-wrapper">
+        <h1 className="paragraph-title">Contact</h1>
         <p>
           Hey there! I'm all about rolling up my sleeves and getting things
           done. I thrive on challenges and adapt like a chameleon in different
@@ -31,21 +29,21 @@ const Contact = () => {
         </p>
         <p>Feel free to reach out at any of the platforms below:</p>
         <p
-          className="cursor-pointer text-green-300"
+          className="bottom-link"
           onClick={() => console.log("copied")}
-          onMouseOver={() => setButtonText("Copied to clipboard")}
+          onMouseOver={() => setButtonText("Copy to clipboard")}
           onMouseLeave={() => setButtonText("matej4o9@gmail.com")}
         >
           {buttonText}
         </p>
         <a
-          className="flex text-green-300"
+          className="bottom-link"
           href="https://www.linkedin.com/in/matej-kostov-949834134/"
         >
           Instagram
         </a>
         <a
-          className="flex text-green-300"
+          className="bottom-link"
           href="https://www.linkedin.com/in/matej-kostov-949834134/"
         >
           LinkedIn
