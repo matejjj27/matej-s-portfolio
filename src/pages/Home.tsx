@@ -20,8 +20,8 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center pl-40 bg-gray-900 text-white">
-      <div className="max-w-2xl">
+    <div className="home-wrapper">
+      <div>
         <NavButton
           onClick={() => navigate("/about")}
           onMouseOver={() => handleMouseOver("button1", "About")}

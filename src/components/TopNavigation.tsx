@@ -6,7 +6,7 @@ const TopNavigation = () => {
   const navigate = useNavigate();
 
   return (
-    <nav className="bg-transparent pr-40 pt-20 flex justify-end sticky top-0">
+    <nav className="nav-wrapper">
       <span
         className="cursor-pointer text-lg"
         onClick={() => navigate("/")}

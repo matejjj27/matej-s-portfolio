@@ -17,8 +17,14 @@
     @apply cursor-pointer text-8xl mb-8 transform transition-transform duration-300 hover:translate-x-8;
   }
 
+  .nav-wrapper {
+    @apply bg-transparent pr-40 pt-20 flex justify-end sticky top-0;
+  }
+  .home-wrapper {
+    @apply min-h-screen flex items-center pl-40 bg-gray-900 text-white;
+  }
   .page-wrapper {
-    @apply p-10 text-center;
+    @apply min-h-screen p-10 text-center bg-gray-900 text-white;
   }
   .content-wrapper {
     @apply flex flex-col gap-5 text-start max-w-xl mx-auto mb-20;
@@ -27,6 +33,4 @@
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 }

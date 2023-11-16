@@ -5,7 +5,7 @@ const withTopNavigation = <P extends object>(
   WrappedComponent: React.ComponentType<P>
 ) => {
   const WithTopNavigation: React.FC<P> = (props) => (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="bg-gray-900 text-white">
       <TopNavigation />
       <WrappedComponent {...props} />
     </div>
