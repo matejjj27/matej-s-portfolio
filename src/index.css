@@ -40,18 +40,17 @@
     @apply transform transition-transform duration-300 hover:translate-x-8;
   }
 
-  .tap-anywhere {
-    @apply absolute bottom-0 left-0 w-full text-center mb-5 text-lg;
-  }
-
-  .bottom-link {
-    @apply cursor-pointer flex text-green-300 move-right-on-hover;
-  }
   .main-title {
-    @apply text-start m-12 mb-16 text-8xl max-w-5xl mx-auto max-sm:text-6xl max-sm:mb-5;
+    @apply text-start m-12 mb-16 text-8xl max-w-5xl mx-auto max-sm:text-6xl max-sm:m-0 max-sm:mt-10;
   }
   .paragraph-title {
     @apply text-start mt-20 mb-3 text-4xl;
+  }
+  .bottom-link {
+    @apply cursor-pointer flex text-green-300 move-right-on-hover;
+  }
+  .tap-anywhere {
+    @apply absolute bottom-0 left-0 w-full text-center mb-5 text-lg;
   }
 
   .nav-button {
