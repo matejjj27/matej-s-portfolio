@@ -2,9 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes textAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes upAndDown {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-8px);
+  }
+}
+
 @layer components {
+  .jump {
+    animation: upAndDown 0.5s infinite alternate;
+  }
+
+  .text-appear {
+    animation: textAppear 0.3s ease-in-out;
+    @apply relative overflow-hidden;
+  }
+
   .move-right-on-hover {
     @apply transform transition-transform duration-300 hover:translate-x-8;
+  }
+
+  .tap-anywhere {
+    @apply absolute bottom-0 left-0 w-full text-center mb-5 text-lg;
   }
 
   .bottom-link {
@@ -18,7 +51,7 @@
   }
 
   .nav-button {
-    @apply cursor-pointer text-8xl mb-8 move-right-on-hover max-sm:text-7xl;
+    @apply text-9xl mb-5 max-sm:text-7xl;
   }
 
   .md-screen {

@@ -8,6 +8,7 @@ const Home = () => {
   const [buttons, setButtons] = useState(homeNavButtons);
   const [isMobile, setIsMobile] = useState<boolean>(true);
   const [isHomeClicked, setIsHomeClicked] = useState<boolean>(false);
+  const [animationIndex, setAnimationIndex] = useState<number>(0);
 
   const navigate = useNavigate();
 
@@ -25,17 +26,19 @@ const Home = () => {
     }
   };
 
-  const handleClick = () => {
+  const handleClick = (event: { stopPropagation: () => void }) => {
+    event.stopPropagation();
     if (isMobile) {
       setButtons((prev) =>
-        prev.map((button) => ({ ...button, isHovered: !button.isHovered }))
+        prev.map((button) => ({
+          ...button,
+          isHovered: !button.isHovered,
+          isRendered: false
+        }))
       );
       setIsHomeClicked((prev) => !prev);
+      setAnimationIndex(0);
     }
-  };
-
-  const handleNavigation = (path: string) => {
-    navigate(path);
   };
 
   useEffect(() => {
@@ -50,18 +53,52 @@ const Home = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (animationIndex < buttons.length) {
+      const timeoutId = setTimeout(() => {
+        setButtons((prevButtons) =>
+          prevButtons.map((button, index) =>
+            index === animationIndex ? { ...button, isRendered: true } : button
+          )
+        );
+        setAnimationIndex((prevIndex) => prevIndex + 1);
+      }, 300);
+      return () => clearTimeout(timeoutId);
+    }
+  }, [animationIndex, buttons, isHomeClicked]);
+
+  console.log(isHomeClicked, "isHome");
+
   return (
     <div className="home-wrapper" onClick={handleClick}>
-      {buttons?.map(({ helloText, navText, color, path, isHovered }) => (
-        <NavButton
-          onClick={() => handleNavigation(path)}
-          onMouseOver={() => handleMouseOver(helloText, true)}
-          onMouseLeave={() => handleMouseOver(helloText, false)}
-          text={isHovered ? navText : helloText}
-          color={color}
-          disabled={isMobile && !isHomeClicked}
-        />
-      ))}
+      {!isHomeClicked && (
+        <div
+          className="overlay fixed inset-0 opacity50"
+          onClick={handleClick}
+        ></div>
+      )}
+
+      {buttons?.map(
+        ({ helloText, navText, color, path, isHovered, isRendered }) => (
+          <NavButton
+            key={helloText}
+            onClick={() => {
+              if (isHomeClicked || !isMobile) navigate(path);
+            }}
+            onMouseOver={() => handleMouseOver(helloText, true)}
+            onMouseLeave={() => handleMouseOver(helloText, false)}
+            text={isHovered ? navText : helloText}
+            color={color}
+            className={`${!isMobile ? "move-right-on-hover" : ""} ${
+              isHomeClicked || !isMobile ? "cursor-pointer" : ""
+            } ${isRendered ? "text-appear" : ""} ${
+              isRendered ? "" : "text-transparent"
+            }`}
+          />
+        )
+      )}
+
+      {isMobile && <p className="jump tap-anywhere">Tap Anywhere</p>}
     </div>
   );
 };
