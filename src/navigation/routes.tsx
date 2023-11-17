@@ -1,7 +1,7 @@
-import Home from "../pages/Home";
-import About from "../pages/About";
-import Contact from "../pages/Contact";
-import Work from "../pages/Work";
+import Home from "../pages/home/Home";
+import About from "../pages/about/About";
+import Contact from "../pages/contact/Contact";
+import Work from "../pages/work/Work";
 
 const routes = [
   {

@@ -1,23 +1,19 @@
-interface NavButtonProps {
-  onClick: () => void;
-  onMouseOver: () => void;
-  onMouseLeave: () => void;
+import { ButtonHTMLAttributes } from "react";
+
+interface NavButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
   color?: string;
 }
 
 export const NavButton = ({
   onClick,
-  onMouseOver,
-  onMouseLeave,
   text,
-  color
+  color,
+  ...rest
 }: NavButtonProps) => {
   return (
-    <h1 className={`nav-button ${color}`} onClick={onClick}>
-      <span onMouseOver={onMouseOver} onMouseLeave={onMouseLeave}>
-        {text}
-      </span>
-    </h1>
+    <button {...rest} className={`nav-button ${color}`} onClick={onClick}>
+      {text}
+    </button>
   );
 };

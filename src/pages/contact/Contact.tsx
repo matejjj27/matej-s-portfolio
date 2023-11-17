@@ -1,5 +1,5 @@
 import { useState } from "react";
-import withTopNavigation from "../HOCs/withTopNavigation";
+import withTopNavigation from "../../HOCs/withTopNavigation";
 
 const Contact = () => {
   const [buttonText, setButtonText] = useState("matej4o9@gmail.com");

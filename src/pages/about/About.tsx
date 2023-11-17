@@ -1,4 +1,4 @@
-import withTopNavigation from "../HOCs/withTopNavigation";
+import withTopNavigation from "../../HOCs/withTopNavigation";
 
 const About = () => {
   const handleDownload = () => {
