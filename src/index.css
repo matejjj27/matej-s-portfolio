@@ -41,7 +41,7 @@
   }
 
   .main-title {
-    @apply text-start m-12 mb-16 text-8xl max-w-5xl mx-auto max-sm:text-6xl max-sm:m-0 max-sm:mt-10;
+    @apply text-start m-12 mb-16 text-8xl max-w-5xl mx-auto max-sm:text-6xl max-sm:m-0 max-sm:mt-6;
   }
   .paragraph-title {
     @apply text-start mt-20 mb-3 text-4xl;

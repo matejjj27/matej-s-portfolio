@@ -6,7 +6,9 @@ const Contact = () => {
 
   return (
     <div className="page-wrapper">
-      <h1 className="main-title">Want to make something great together?</h1>
+      <h1 className="main-title">
+        Let's team up to create something amazing!
+      </h1>
       <div className="content-wrapper">
         <h1 className="paragraph-title">Contact</h1>
         <p>
