@@ -41,13 +41,19 @@
   }
 
   .main-title {
-    @apply text-start m-12 mb-16 text-8xl max-w-5xl mx-auto max-sm:text-6xl max-sm:m-0 max-sm:mt-6;
+    @apply text-start m-12 mb-16 text-7xl max-w-5xl mx-auto max-sm:text-6xl max-sm:m-0 max-sm:mt-6;
   }
   .paragraph-title {
-    @apply text-start mt-20 mb-3 text-4xl;
+    @apply mt-20 mb-2 text-4xl max-sm:text-3xl;
+  }
+  .main-paragraph-text {
+    @apply text-2xl max-sm:text-xl;
+  }
+  .paragraph-text {
+    @apply text-lg max-sm:text-base;
   }
   .bottom-link {
-    @apply cursor-pointer flex text-green-300 move-right-on-hover;
+    @apply cursor-pointer flex text-green-300 move-right-on-hover paragraph-text;
   }
   .tap-anywhere {
     @apply absolute bottom-0 left-0 w-full text-center mb-5 text-lg;

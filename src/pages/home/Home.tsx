@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { NavButton } from "../../components/NavButton";
-import { useHomeNavButtons } from "../../hooks/useHomeNavButtons";
+import { homeNavButtons } from "../../utils/constants";
 
 const Home = () => {
-  const homeNavButtons = useHomeNavButtons();
   const [buttons, setButtons] = useState(homeNavButtons);
   const [isMobile, setIsMobile] = useState<boolean>(true);
   const [isHomeClicked, setIsHomeClicked] = useState<boolean>(false);
@@ -67,7 +66,26 @@ const Home = () => {
     }
   }, [animationIndex, buttons, isHomeClicked]);
 
-  console.log(isHomeClicked, "isHome");
+  const NavButtons = () =>
+    buttons?.map(
+      ({ helloText, navText, color, path, isHovered, isRendered }) => (
+        <NavButton
+          key={helloText}
+          onClick={() => {
+            if (isHomeClicked || !isMobile) navigate(path);
+          }}
+          onMouseOver={() => handleMouseOver(helloText, true)}
+          onMouseLeave={() => handleMouseOver(helloText, false)}
+          text={isHovered ? navText : helloText}
+          color={color}
+          className={`${!isMobile ? "move-right-on-hover" : ""} ${
+            isHomeClicked || !isMobile ? "cursor-pointer" : ""
+          } ${isRendered ? "text-appear" : ""} ${
+            isRendered ? "" : "text-transparent"
+          }`}
+        />
+      )
+    );
 
   return (
     <div className="home-wrapper" onClick={handleClick}>
@@ -78,27 +96,8 @@ const Home = () => {
         ></div>
       )}
 
-      {buttons?.map(
-        ({ helloText, navText, color, path, isHovered, isRendered }) => (
-          <NavButton
-            key={helloText}
-            onClick={() => {
-              if (isHomeClicked || !isMobile) navigate(path);
-            }}
-            onMouseOver={() => handleMouseOver(helloText, true)}
-            onMouseLeave={() => handleMouseOver(helloText, false)}
-            text={isHovered ? navText : helloText}
-            color={color}
-            className={`${!isMobile ? "move-right-on-hover" : ""} ${
-              isHomeClicked || !isMobile ? "cursor-pointer" : ""
-            } ${isRendered ? "text-appear" : ""} ${
-              isRendered ? "" : "text-transparent"
-            }`}
-          />
-        )
-      )}
-
-      {isMobile && <p className="jump tap-anywhere">Tap Anywhere</p>}
+      <NavButtons />
+      {isMobile && <p className="jump tap-anywhere">tap anywhere</p>}
     </div>
   );
 };

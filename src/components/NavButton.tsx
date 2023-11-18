@@ -15,7 +15,7 @@ export const NavButton = ({
 }: NavButtonProps) => {
   return (
     <div {...rest} className={`nav-button ${color} `}>
-      <p className={`${className}`}>{text}</p>
+      <div className={`${className}`}>{text}</div>
     </div>
   );
 };
