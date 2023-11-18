@@ -5,7 +5,7 @@ const Work = () => {
     <div className="page-wrapper mt-10">
       <div className="content-wrapper gap-10">
         <div className="move-right-on-hover cursor-pointer flex flex-col gap-2">
-          <h1 className="text-6xl">netflix clone</h1>
+          <h1 className="text-6xl">clone app</h1>
           <p className="text-lg text-green-300">work in progress</p>
         </div>
         <div className="move-right-on-hover cursor-pointer flex flex-col gap-2">
