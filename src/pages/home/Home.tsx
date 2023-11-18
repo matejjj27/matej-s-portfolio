@@ -66,37 +66,30 @@ const Home = () => {
     }
   }, [animationIndex, buttons, isHomeClicked]);
 
-  const NavButtons = () =>
-    buttons?.map(
-      ({ helloText, navText, color, path, isHovered, isRendered }) => (
-        <NavButton
-          key={helloText}
-          onClick={() => {
-            if (isHomeClicked || !isMobile) navigate(path);
-          }}
-          onMouseOver={() => handleMouseOver(helloText, true)}
-          onMouseLeave={() => handleMouseOver(helloText, false)}
-          text={isHovered ? navText : helloText}
-          color={color}
-          className={`${!isMobile ? "move-right-on-hover" : ""} ${
-            isHomeClicked || !isMobile ? "cursor-pointer" : ""
-          } ${isRendered ? "text-appear" : ""} ${
-            isRendered ? "" : "text-transparent"
-          }`}
-        />
-      )
-    );
+  const navButtons = buttons?.map(
+    ({ helloText, navText, color, path, isHovered, isRendered }) => (
+      <NavButton
+        key={helloText}
+        onClick={() => {
+          if (isHomeClicked || !isMobile) navigate(path);
+        }}
+        onMouseOver={() => handleMouseOver(helloText, true)}
+        onMouseLeave={() => handleMouseOver(helloText, false)}
+        text={isHovered ? navText : helloText}
+        color={color}
+        className={`${!isMobile ? "move-right-on-hover" : ""} ${
+          isHomeClicked || !isMobile ? "cursor-pointer" : ""
+        } ${isRendered ? "text-appear" : ""} ${
+          isRendered ? "" : "text-transparent"
+        }`}
+      />
+    )
+  );
 
   return (
     <div className="home-wrapper" onClick={handleClick}>
-      {!isHomeClicked && (
-        <div
-          className="overlay fixed inset-0 opacity50"
-          onClick={handleClick}
-        ></div>
-      )}
+      {navButtons}
 
-      <NavButtons />
       {isMobile && <p className="jump tap-anywhere">tap anywhere</p>}
     </div>
   );
