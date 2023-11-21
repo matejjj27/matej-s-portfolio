@@ -9,7 +9,7 @@ const About = () => {
   return (
     <div className="page-wrapper">
       <h1 className="main-title">
-        Passionate about every pixel & dedicated to every line of code
+        passionate about every pixel & dedicated to every line of code
       </h1>
 
       <div className="content-wrapper">

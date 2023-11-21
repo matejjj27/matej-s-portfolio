@@ -41,10 +41,10 @@
   }
 
   .main-title {
-    @apply text-start m-12 mb-16 text-7xl max-w-5xl mx-auto max-sm:text-6xl max-sm:m-0 max-sm:mt-6;
+    @apply text-start leading-tight m-12 font-bold mb-16 text-7xl max-w-5xl mx-auto max-sm:text-5xl max-sm:m-0 max-sm:mt-6;
   }
   .paragraph-title {
-    @apply mt-20 mb-2 text-4xl max-sm:text-3xl;
+    @apply mt-20 mb-2 text-4xl max-sm:text-3xl font-semibold;
   }
   .main-paragraph-text {
     @apply text-2xl max-sm:text-xl;
@@ -79,5 +79,7 @@
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
   background-color: #202225;
 }
