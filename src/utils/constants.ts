@@ -72,6 +72,14 @@ export const contactAnchorSections: Anchor[] = [
   }
 ];
 
+export const aboutAnchorSections: Anchor[] = [
+  // {
+  //   className: "bottom-link",
+  //   href: "https://github.com/matejjj27",
+  //   text: "github"
+  // }
+];
+
 export const oldContactParagraphSections = [
   {
     className: "paragraph-text",

@@ -1,6 +1,8 @@
 import withTopNavigation from "../../HOCs/withTopNavigation";
+import AnchorSections from "../../components/AnchorSections";
 import ParagraphSections from "../../components/ParagraphSections";
 import useAboutParagraphSections from "../../hooks/useAboutParagraphSections";
+import { aboutAnchorSections } from "../../utils/constants";
 
 const About = () => {
   const aboutParagraphSections = useAboutParagraphSections();
@@ -14,6 +16,7 @@ const About = () => {
         <h1 className="paragraph-title">about</h1>
 
         <ParagraphSections paragraphs={aboutParagraphSections} />
+        <AnchorSections anchors={aboutAnchorSections} />
       </div>
     </div>
   );
