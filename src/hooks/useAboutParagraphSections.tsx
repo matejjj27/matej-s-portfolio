@@ -1,6 +1,6 @@
 import { handleCVDownload } from "../utils/utils";
 import { useState } from "react";
-import { useScrollToTopNavigate } from "./useScrolltoTopNavigate";
+import { useScrollToTopNavigate } from "./useScrollToTopNavigate";
 
 const useAboutParagraphSections = () => {
   const [contactStyles, setContactStyles] = useState<string>("paragraph-text");
@@ -61,8 +61,8 @@ const useAboutParagraphSections = () => {
             contact
           </span>
         </span>
-      ),
-    //   onClick: () => navigate("/contact")
+      )
+      //   onClick: () => navigate("/contact")
       //   onMouseOver: () =>
       //     setContactStyles(
       //       (prev) => `${prev} move-right-on-hover text-green-300 cursor-pointer`

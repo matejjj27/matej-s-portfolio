@@ -62,7 +62,7 @@ export const aboutParagraphSections: Paragraph[] = [
 export const contactAnchorSections: Anchor[] = [
   {
     className: "bottom-link",
-    href: "https://www.linkedin.com/in/matej-kostov-949834134/",
+    href: "https://instagram.com/matejkostov?igshid=OGQ5ZDc2ODk2ZA==",
     text: "instagram"
   },
   {
