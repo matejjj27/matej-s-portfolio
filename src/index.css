@@ -60,6 +60,9 @@
     @apply text-lg text-green-300;
   }
 
+  .project-wrapper {
+    @apply move-right-on-hover cursor-pointer flex flex-col gap-2;
+  }
   .nav-button-wrapper {
     @apply mb-5 text-center text-9xl max-md:text-8xl max-sm:text-7xl;
   }
@@ -78,7 +81,6 @@
 }
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   background-color: #202225;
