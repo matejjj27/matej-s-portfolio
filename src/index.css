@@ -67,7 +67,7 @@
     @apply bg-transparent pr-40 pt-20 flex justify-end sticky top-0 max-sm:pr-10 max-sm:pt-10;
   }
   .home-wrapper {
-    @apply min-h-screen flex flex-col items-start justify-center ml-60 bg-gray-900 text-white max-md:ml-14;
+    @apply min-h-screen flex flex-col items-start justify-center ml-60 bg-gray-900 text-white max-md:ml-10;
   }
   .page-wrapper {
     @apply min-h-screen p-10 text-center bg-gray-900 text-white;

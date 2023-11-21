@@ -8,7 +8,7 @@ const TopNavigation = () => {
   return (
     <nav className="nav-wrapper">
       <span
-        className="cursor-pointer text-xl max-sm:lg font-semibold"
+        className="cursor-pointer text-xl max-sm:text-lg font-semibold"
         onClick={() => navigate("/")}
         onMouseOver={() => setButtonText("matej.dev")}
         onMouseLeave={() => setButtonText("matej.")}
