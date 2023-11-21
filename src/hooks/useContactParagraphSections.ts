@@ -2,29 +2,45 @@ import { useState } from "react";
 
 export const useContactParagraphSections = () => {
   const [buttonText, setButtonText] = useState("matej4o9@gmail.com");
+  const [isEmailCopied, setIsEmailCopied] = useState<boolean>(false);
+
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText("matej4o9@gmail.com");
+      setIsEmailCopied(true);
+      setButtonText("copied to clipboard");
+    } catch (err) {
+      console.error("Failed to copy: ", err);
+    }
+  };
 
   return [
     {
       className: "paragraph-text",
-      text: "hey there! i am all about rolling up my sleeves and getting things done. I thrive on challenges and adapt like a chameleon in different work environments. I'm the type who loves learning new stuff, and I've got a knack for picking things up fast. Whether it's a new skill, tool, or a completely different job, I'm up for the adventure."
+      text: "hey there! if you are seeking a tech-savvy professional to elevate your project or team, I'm ready to contribute my skills and enthusiasm."
     },
     {
       className: "paragraph-text",
-      text: "let's not just work - let's make things happen together. If you've got a project or idea in mind, I'm all ears. Let's connect and explore the possibilities. I'm not just a worker, I'm a proactive problem solver and a dedicated team player."
+      text: "collaboration is at the heart of innovation. whether it's developing cutting-edge web applications, crafting user-centric interfaces, or exploring new tech frontiers, i bring a combination of technical expertise and creative problem-solving to the table. let's collaborate to create something exceptional."
     },
     {
       className: "paragraph-text",
-      text: "excited about the opportunities to collaborate, innovate, and make a meaningful impact in my field. let's connect and explore how my skills and motivation can contribute to our shared goals."
+      text: "open to a variety of projects and roles. from startups needing a dynamic developer to established companies seeking fresh perspectives, i am eager to contribute and grow in diverse environments."
     },
     {
       className: "paragraph-text",
-      text: "feel free to reach out at any of the platforms below:"
+      text: "in a world driven by technology, the right collaboration can lead to groundbreaking results. if you are looking for a developer who not only understands code but also the bigger picture of project goals and user experience, let's connect and make a significant impact together."
+    },
+    {
+      className: "paragraph-text",
+      text: "available for projects that require a blend of technical proficiency and innovative thinking. Here is how you can reach me:"
     },
     {
       className: "bottom-link",
       text: buttonText,
-      onClick: () => console.log("copied to clipboard"),
-      onMouseOver: () => setButtonText("copy to clipboard"),
+      onClick: () => copyToClipboard(),
+      onMouseOver: () =>
+        setButtonText(`${isEmailCopied ? "copied" : "copy"} to clipboard`),
       onMouseLeave: () => setButtonText("matej4o9@gmail.com")
     }
   ];

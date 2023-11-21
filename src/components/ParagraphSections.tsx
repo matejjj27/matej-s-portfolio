@@ -5,8 +5,8 @@ interface ParagraphSectionsProps {
 }
 
 const ParagraphSections = ({ paragraphs }: ParagraphSectionsProps) =>
-  paragraphs.map(({ text, ...rest }) => (
-    <p key={text} {...rest}>
+  paragraphs.map(({ text, ...rest }, index) => (
+    <p key={index} {...rest}>
       {text}
     </p>
   ));

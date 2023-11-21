@@ -1,5 +1,7 @@
+import { ReactNode } from "react";
+
 export interface Paragraph extends React.HTMLProps<HTMLParagraphElement> {
-  text: string;
+  text: string | ReactNode;
 }
 
 export interface Anchor extends React.HTMLProps<HTMLAnchorElement> {
