@@ -50,28 +50,23 @@ const useAboutParagraphSections = () => {
       text: (
         <span>
           {
-            "let's connect and explore how my skills, motivation, and zest for innovation can contribute to our shared goals. i am always open to discussing new projects, tech trends, or potential collaborations. feel free to reach out to me. "
+            "let's connect and explore how my skills, motivation, and zest for innovation can contribute to our shared goals. i am always open to discussing new projects, tech trends, or potential collaborations. feel free to "
           }
           <span
-            className="cursor-pointer text-green-300"
+            className="cursor-pointer text-green-300 "
             onClick={() => navigate("/contact")}
             onMouseOver={() => setContactStyles("paragraph-text")}
             onMouseLeave={() => setContactStyles("paragraph-text")}
           >
-            contact
+            reach out
           </span>
+          {" to me. "}
         </span>
       )
-      //   onClick: () => navigate("/contact")
-      //   onMouseOver: () =>
-      //     setContactStyles(
-      //       (prev) => `${prev} move-right-on-hover text-green-300 cursor-pointer`
-      //     ),
-      //   onMouseLeave: () => setContactStyles("paragraph-text")
     },
     {
       className: "paragraph-text",
-      text: "you can read more about my biography, experience, skills, education and much more in the pdf attached bellow:"
+      text: "you can read more about my biography, experience, skills, education and much more in the pdf attached bellow or visit my github to see some of my projects:"
     },
     {
       className: "bottom-link",
