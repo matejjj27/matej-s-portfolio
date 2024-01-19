@@ -1,5 +1,5 @@
-export const handleCVDownload = () => {
-  const cvUrl = import.meta.env.VITE_CV_URL;
+export const handleCVDownload = (url: string) => {
+  const cvUrl = url;
   const link = document.createElement("a");
   link.href = cvUrl;
   link.download = "Matej Kostov Resume.pdf";

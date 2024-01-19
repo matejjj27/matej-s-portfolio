@@ -70,8 +70,13 @@ const useAboutParagraphSections = () => {
     },
     {
       className: "bottom-link",
-      text: "my resume (cv)",
-      onClick: handleCVDownload
+      text: "my resume (cv) - en",
+      onClick: () => handleCVDownload(import.meta.env.VITE_CV_URL)
+    },
+    {
+      className: "bottom-link",
+      text: "my resume (cv) - de",
+      onClick: () => handleCVDownload(import.meta.env.VITE_CV_URL_DE)
     }
   ];
 };
