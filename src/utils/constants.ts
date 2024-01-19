@@ -55,7 +55,7 @@ export const aboutParagraphSections: Paragraph[] = [
   {
     className: "bottom-link",
     text: "my resume (cv)",
-    onClick: handleCVDownload
+    onClick: () => handleCVDownload(import.meta.env.VITE_CV_URL)
   }
 ];
 
