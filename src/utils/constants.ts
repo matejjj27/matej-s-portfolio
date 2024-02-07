@@ -63,12 +63,14 @@ export const contactAnchorSections: Anchor[] = [
   {
     className: "bottom-link",
     href: "https://instagram.com/matejkostov?igshid=OGQ5ZDc2ODk2ZA==",
-    text: "instagram"
+    text: "instagram",
+    target: "_blank"
   },
   {
     className: "bottom-link",
     href: "https://www.linkedin.com/in/matej-kostov-949834134/",
-    text: "linkedin"
+    text: "linkedin",
+    target: "_blank"
   }
 ];
 
@@ -76,6 +78,7 @@ export const aboutAnchorSections: Anchor[] = [
   {
     className: "bottom-link",
     href: "https://github.com/matejjj27",
-    text: "github"
+    text: "github",
+    target: "_blank"
   }
 ];
