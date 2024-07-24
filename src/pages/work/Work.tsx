@@ -1,9 +1,6 @@
-import { useNavigate } from "react-router-dom";
 import withTopNavigation from "../../HOCs/withTopNavigation";
 
 const Work = () => {
-  const navigate = useNavigate();
-
   const handleExternalLinkClick = (link: string) => {
     window.open(link, "_blank");
   };
@@ -11,9 +8,10 @@ const Work = () => {
   return (
     <div className="page-wrapper mt-12 max-lg:mt-10 max-sm:mt-6">
       <div className="content-wrapper gap-14">
-        <div className="project-wrapper" onClick={() => navigate("/")}>
+        <div className="project-wrapper">
           <h1 className="project-title">portfolio</h1>
           <p className="project-subtitle">portfolio web app with react</p>
+          <p className="project-subtitle">you are browsing it now</p>
         </div>
         <div
           className="project-wrapper"
