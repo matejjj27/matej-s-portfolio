@@ -25,12 +25,22 @@ const Work = () => {
         </div>
         <div
           className="project-wrapper"
+          onClick={() =>
+            handleExternalLinkClick("https://yamb-game.vercel.app")
+          }
+        >
+          <h1 className="project-title">yamb</h1>
+          <p className="project-subtitle">pass and play dice game</p>
+          <p className="project-subtitle text-orange-300">in progress</p>
+        </div>
+        <div
+          className="project-wrapper"
           // onClick={() =>
-          //   handleExternalLinkClick("https://todoer-app-zeta.vercel.app")
+          //   handleExternalLinkClick("https://gin-rummy.vercel.app")
           // }
         >
-          <h1 className="project-title">netflix clone</h1>
-          <p className="project-subtitle">web app in react</p>
+          <h1 className="project-title">gin rummy</h1>
+          <p className="project-subtitle">card game</p>
           <p className="project-subtitle text-red-400">todo</p>
         </div>
       </div>
